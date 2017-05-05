@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width">
+	<style>	
+		html,body,main{
+			height: 100%;
+			width: 100%;
+		}
+/*		div{
+			float: left;
+		}
+
+*/		
+		a#menu svg {
+        width: 40px;
+        fill: #000;
+      }
+		.drawer{
+			width: 300px;
+			height: 100%;
+			position: absolute;
+			transform: translate(-300px,0);
+			transition: transform .3s ease;
+			background-color: blue;
+			
+		}
+		nav.open{
+			position: relative;
+			transform: translate(0,0);
+		}
+		main{
+			background: #444;
+		}
+/*		@media screen and (max-width: 599px){
+			nav{
+				transform: translate(-300px,0);
+			transition: transform 0.3s ease;
+			}
+		}
+*/		
+			body{
+				display: flex;
+				flex-flow: row nowrap;
+			}
+
+		@media (min-width: 600px){
+			.drawer{
+				position: relative;
+				transform: translate(0,0);
+			}
+			main{
+				width: auto;
+				flex-grow: 0;
+			}
+		}
+		a{
+			padding: 2em;
+		}
+	</style>
+</head>
+<body >
+	<nav class="drawer">
+		<h1>Off Canvas</h1>
+		<p>Click out the drawer to close</p>
+	</nav>
+	<main>
+		<a id="menu">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+    	      	<path d="M2 6h20v3H2zm0 5h20v3H2zm0 5h20v3H2z"></path>
+ 	       </svg>this a the link
+		</a>
+		<h1>The drawer stays open if width > 600px</h1>
+		<p>Click on the menu icon to open drawer</p>
+	</main>
+	<footer style="background-color: red;width: auto;flex-grow: 4"></footer>
+</body>
+<script>
+	var ele = document.querySelector('#menu');
+	var drawer = document.querySelector('.drawer');
+	 var main = document.querySelector('main');
+	ele.addEventListener('click',function (e) {
+		drawer.classList.toggle('open');
+		e.stopPropagation();
+	})
+	 main.addEventListener('click', function() {
+        drawer.classList.remove('open');
+      });
+</script>
+</html>

@@ -1,0 +1,10 @@
+body{ font-family: 'Lato', sans-serif; color: #747704; font-weight: 3000 }
+/*body{ font-family: 'Indie Flower', cursive; color: #747704 }*/
+
+.span{	width: 80px; height: 80px; display: block; }
+.color1{ background-color: #02b3e4}
+.color2{ background-color: #2d3c49 }
+.color3{ background-color: #7d97ad }
+.nav a{ font-size: 24px;  }
+.nav{ margin-top: 120px }
+
